@@ -1,68 +1,13 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { Mail, Phone, MapPin, Clock, Send } from 'lucide-react';
-import { toast } from 'sonner';
-import axios from 'axios';
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
-const API = `${BACKEND_URL}/api`;
 
 const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    institution: '',
-    serviceType: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-
-    try {
-      const response = await axios.post(`${API}/contact`, formData);
-
-      if (response.data.success) {
-        toast.success(response.data.message, {
-          description: `Reference ID: ${response.data.inquiry_id}`,
-          duration: 5000,
-        });
-
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          institution: '',
-          serviceType: '',
-          message: ''
-        });
-      }
-    } catch (error) {
-      console.error('Contact form submission error:', error);
-      const errorMessage = error.response?.data?.detail || 'Something went wrong. Please try again.';
-      toast.error('Error', {
-        description: errorMessage,
-        duration: 4000,
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  /* Unused state and handlers removed for build implementation */
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
