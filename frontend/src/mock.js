@@ -100,9 +100,9 @@ export const processSteps = [
 
 export const whyChooseUs = [
   {
-    icon: "calendar",
-    title: "Planned Pickup",
-    description: "Pick-up land and safe delivery"
+    icon: "truck",
+    title: "Self Pickup and Drop",
+    description: "Pick-up and safe delivery"
   },
   {
     icon: "gitBranch",

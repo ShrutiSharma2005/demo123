@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '../components/ui/button';
 import { Card, CardContent } from '../components/ui/card';
-import { ArrowRight, CheckCircle, Sparkles } from 'lucide-react';
+import { ArrowRight, CheckCircle, Sparkles, Truck, Calendar, GitBranch, Leaf, Cpu, Users, Tag, Eye, Package } from 'lucide-react';
 import { services, whyChooseUs, testimonials } from '../mock';
 
 const Home = () => {
@@ -38,9 +38,8 @@ const Home = () => {
             key={img}
             src={img}
             alt="Laundry Service"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              index === currentImage ? "opacity-40" : "opacity-0"
-            }`}
+            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImage ? "opacity-40" : "opacity-0"
+              }`}
           />
         ))}
 
@@ -91,7 +90,7 @@ const Home = () => {
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold text-blue-900">10K+</div>
-              <div className="text-sm sm:text-base font-semibold text-gray-900">Garments Cleaned</div>
+              <div className="text-sm sm:text-base font-semibold text-gray-900">Garments Cleaned Per Day</div>
             </div>
             <div>
               <div className="text-3xl sm:text-4xl font-bold text-blue-900">20+</div>
@@ -116,14 +115,16 @@ const Home = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: '🌿', title: 'Eco-Friendly', desc: 'Using eco-friendly detergents' },
-              { icon: '⚙️', title: 'Modern Equipment', desc: 'State-of-the-art machinery' },
-              { icon: '🎯', title: 'Fabric Knowledge', desc: 'Expert handling of all fabrics' },
-              { icon: '✨', title: 'Quality Focus', desc: 'Maintaining hygiene standards' }
+              { icon: Leaf, title: 'Eco-Friendly', desc: 'Using eco-friendly detergents' },
+              { icon: Cpu, title: 'Modern Equipment', desc: 'State-of-the-art machinery' },
+              { icon: Sparkles, title: 'Fabric Knowledge', desc: 'Expert handling of all fabrics' },
+              { icon: CheckCircle, title: 'Quality Focus', desc: 'Maintaining hygiene standards' }
             ].map((item, index) => (
               <Card key={index} className="border-blue-100 bg-blue-100 hover:border-sky-300 transition-all hover:shadow-lg">
                 <CardContent className="p-6 text-center">
-                  <div className="text-4xl mb-3">{item.icon}</div>
+                  <div className="mb-3 flex justify-center text-sky-600">
+                    <item.icon className="h-10 w-10" />
+                  </div>
                   <h3 className="font-semibold text-lg mb-2 text-gray-900">{item.title}</h3>
                   <p className="text-sm text-gray-600">{item.desc}</p>
                 </CardContent>
@@ -211,7 +212,20 @@ const Home = () => {
             {whyChooseUs.map((item, index) => (
               <div key={index} className="text-center p-6 rounded-xl bg-blue-100 hover:bg-blue-50 transition-colors">
                 <div className="inline-flex items-center justify-center w-14 h-14 bg-sky-600 text-white rounded-full mb-4">
-                  <span className="text-2xl">{item.icon === 'calendar' ? '📅' : item.icon === 'gitBranch' ? '🔄' : item.icon === 'leaf' ? '🌿' : item.icon === 'cpu' ? '⚙️' : item.icon === 'users' ? '👥' : item.icon === 'tag' ? '🏷️' : item.icon === 'eye' ? '👁️' : '📦'}</span>
+                  {(() => {
+                    const Icon = {
+                      truck: Truck,
+                      calendar: Calendar,
+                      gitBranch: GitBranch,
+                      leaf: Leaf,
+                      cpu: Cpu,
+                      users: Users,
+                      tag: Tag,
+                      eye: Eye,
+                      package: Package
+                    }[item.icon] || Package;
+                    return <Icon className="h-7 w-7" />;
+                  })()}
                 </div>
                 <h3 className="font-semibold text-lg mb-2 text-gray-900">{item.title}</h3>
                 <p className="text-sm text-gray-600">{item.description}</p>
