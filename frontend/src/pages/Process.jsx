@@ -82,7 +82,7 @@ const Process = () => {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-blue-900 to-sky-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Laundry Process</h1>
+          <h1 className="text-4xl md:text-5xl font-bold mb-6">Our Laundry Solution</h1>
           <p className="text-xl md:text-2xl text-sky-100 max-w-3xl mx-auto">
             A systematic, step-by-step approach ensuring quality at every stage
           </p>

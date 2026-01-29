@@ -47,7 +47,7 @@ export const services = [
     icon: "factory",
     image:
 
-      "/industry.png",
+      "/industry.jpg",
     features: [
       "Handles large laundry volumes",
       "Saves staff time and effort",
