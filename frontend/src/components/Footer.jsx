@@ -9,10 +9,10 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <img 
-              src="https://customer-assets.emergentagent.com/job_c7b18a6e-5dbd-4a9a-a02e-46cd6ab4363b/artifacts/jgmdbhj8_VENUS%20FABCARE%20%281%29.png" 
-              alt="Venus Fabcare Logo" 
-              className="h-12 w-auto brightness-0 invert"
+            <img
+              src="https://customer-assets.emergentagent.com/job_c7b18a6e-5dbd-4a9a-a02e-46cd6ab4363b/artifacts/jgmdbhj8_VENUS%20FABCARE%20%281%29.png"
+              alt="Venus Fabcare Logo"
+              className="h-40 w-auto brightness-0 invert"
             />
             <p className="text-gray-300 text-sm leading-relaxed">
               Gentle on fabrics. Tough on stains. Your trusted laundry partner for institutions across India.
@@ -49,7 +49,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/process" className="text-gray-300 hover:text-sky-400 transition-colors text-sm">
-                  Our Process
+                  Our Solution
                 </Link>
               </li>
               <li>
@@ -88,7 +88,7 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex items-start space-x-3 text-sm">
                 <MapPin className="h-5 w-5 text-sky-400 flex-shrink-0 mt-0.5" />
-                <span className="text-gray-300">Bangalore and Moodabidri, Karnataka, India</span>
+                <span className="text-gray-300">Bangalore and Moodbidre, Karnataka, India</span>
               </li>
               <li className="flex items-center space-x-3 text-sm">
                 <Phone className="h-5 w-5 text-sky-400 flex-shrink-0" />

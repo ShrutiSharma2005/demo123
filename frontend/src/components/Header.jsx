@@ -17,8 +17,7 @@ const Header = () => {
   ];
 
   const navLinkClass = (active) =>
-    `no-underline text-base font-medium transition-colors ${
-      active ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
+    `no-underline text-base font-medium transition-colors ${active ? 'text-blue-900' : 'text-gray-700 hover:text-blue-900'
     }`;
 
   return (
@@ -31,7 +30,7 @@ const Header = () => {
             <img
               src="https://i.ibb.co/RTqb9hJ9/VENUS-FABCARE-1.png"
               alt="Venus Fabcare Logo"
-              className="h-20 md:h-24 lg:h-28 w-auto"
+              className="h-28 md:h-32 lg:h-36 w-auto"
             />
           </Link>
 
@@ -39,7 +38,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className={navLinkClass(isActive('/'))}>Home</Link>
             <Link to="/about" className={navLinkClass(isActive('/about'))}>About Us</Link>
-            <Link to="/process" className={navLinkClass(isActive('/process'))}>Our Process</Link>
+            <Link to="/process" className={navLinkClass(isActive('/process'))}>Our School</Link>
 
             {/* Institutes Dropdown */}
             <div
@@ -48,17 +47,15 @@ const Header = () => {
               onMouseLeave={() => setIsDropdownOpen(false)}
             >
               <button
-                className={`flex items-center no-underline text-base font-medium transition-colors ${
-                  location.pathname.startsWith('/services')
-                    ? 'text-blue-900'
-                    : 'text-gray-700 hover:text-blue-900'
-                }`}
+                className={`flex items-center no-underline text-base font-medium transition-colors ${location.pathname.startsWith('/services')
+                  ? 'text-blue-900'
+                  : 'text-gray-700 hover:text-blue-900'
+                  }`}
               >
                 Institutes We Serve
                 <ChevronDown
-                  className={`ml-1 h-4 w-4 transition-transform ${
-                    isDropdownOpen ? 'rotate-180' : ''
-                  }`}
+                  className={`ml-1 h-4 w-4 transition-transform ${isDropdownOpen ? 'rotate-180' : ''
+                    }`}
                 />
               </button>
 
@@ -106,7 +103,7 @@ const Header = () => {
             <div className="flex flex-col space-y-4">
               <Link to="/" className={navLinkClass(isActive('/'))}>Home</Link>
               <Link to="/about" className={navLinkClass(isActive('/about'))}>About Us</Link>
-              <Link to="/process" className={navLinkClass(isActive('/process'))}>Our Process</Link>
+              <Link to="/process" className={navLinkClass(isActive('/process'))}>Our School</Link>
 
               <div className="space-y-2">
                 <div className="text-base font-semibold text-gray-900">

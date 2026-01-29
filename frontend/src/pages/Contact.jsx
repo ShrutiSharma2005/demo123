@@ -46,7 +46,7 @@ const Contact = () => {
                       <div>
                         <h3 className="font-semibold text-lg text-gray-900 mb-1">Address</h3>
                         <p className="text-gray-600">
-                          Bangalore and Moodabidri, Karnataka, India
+                          Bangalore and Moodbidre, Karnataka, India
                         </p>
                       </div>
                     </div>
@@ -256,7 +256,7 @@ const Contact = () => {
       </section>
 
       {/* Map or Additional CTA */}
-      <section className="py-16 bg-gradient-to-br from-blue-900 to-sky-700 text-white">
+      <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-sky-700 text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-6">
             Ready to Get Started?
@@ -266,13 +266,13 @@ const Contact = () => {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="tel:+91XXXXXXXXXX">
-              <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 text-lg px-8">
+              <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 text-lg px-8 py-6">
                 <Phone className="mr-2 h-5 w-5" />
                 Call Us Now
               </Button>
             </a>
             <a href="mailto:info@venusfabcare.com">
-              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 text-lg px-8">
+              <Button size="lg" variant="outline" className="bg-transparent border-2 border-white text-white hover:bg-white hover:text-sky-600 text-lg px-8 py-6">
                 <Mail className="mr-2 h-5 w-5" />
                 Email Us
               </Button>

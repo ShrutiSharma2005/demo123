@@ -8,7 +8,7 @@ import { Card, CardContent } from '../components/ui/card';
 // Service-specific content
 const serviceContent = {
   'residential-school': {
-    subtitle: '​Our dependable laundry service ensures school uniforms and bedding are handled with care and returned promptly. We help you maintain a professional appearance and daily routine, freeing your staff and students from the stress of managing laundry themselves',
+    subtitle: 'Our laundry service ensures prompt handling of school uniforms and bedding, helping maintain a professional appearance and streamline routines',
     whoFor: [
       'Residential & boarding schools',
       'International & CBSE schools',
@@ -34,7 +34,7 @@ const serviceContent = {
     ]
   },
   'college-laundry': {
-    subtitle: '​We take the guesswork out of campus laundry with a system built on organization and punctuality. With our scheduled pickup and delivery, students are freed from the burden of domestic tasks, maintaining a sharp appearance and a stress-free routine. By handling the details, we empower them to stay focused on their lectures, exams, and the overall college experience',
+    subtitle: 'Simplify your campus laundry experience with our organized pickup and delivery service. We handle the laundry, so you can focus on classes, exams, and enjoying college life. Stay sharp and stress-free!',
     whoFor: [
       'PU colleges with NEET/JEE coaching',
       'Engineering and medical colleges',
@@ -61,7 +61,7 @@ const serviceContent = {
     ]
   },
   'industrial-laundry': {
-    subtitle: 'We offer a high-volume laundry solution tailored for the demands of industry. With a focus on hygiene and punctuality, we manage your workwear and linens so your staff doesn\'t have to. Our seamless process ensures a constant supply of fresh uniforms, allowing your business to maintain peak professionalism with zero effort',
+    subtitle: 'Elevate your business with our high-volume laundry solution! We ensure fresh workwear and linens with a focus on hygiene and punctuality. Let us handle the laundry, so your team can maintain professionalism effortlessly!',
     whoFor: [
       'Factories & manufacturing units',
       'Hotels & hospitality facilities',
@@ -126,7 +126,7 @@ const ServiceDetail = () => {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-bold mb-6">{service.title}</h1>
-              <p className="text-xl md:text-2xl text-sky-100 mb-8 text-justify leading-relaxed">{content.subtitle}</p>
+              <p className="text-xl md:text-2xl text-sky-100 mb-8 leading-relaxed">{content.subtitle}</p>
               <Link to="/contact">
                 <Button size="lg" className="bg-white text-sky-600 hover:bg-sky-50 text-lg px-8 py-6">
                   Get a Quote
@@ -149,7 +149,7 @@ const ServiceDetail = () => {
       </section>
 
       {/* Who This Service Is For */}
-      <section className="py-10 lg:py-14">
+      <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center mb-8">
@@ -158,13 +158,21 @@ const ServiceDetail = () => {
             </h2>
           </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto place-items-center">
+          <div className={`gap-6 mx-auto ${content.whoFor.length === 5
+              ? "flex flex-wrap justify-center max-w-6xl"
+              : content.whoFor.length === 4
+                ? "grid sm:grid-cols-2 lg:grid-cols-4 max-w-7xl"
+                : "grid sm:grid-cols-2 lg:grid-cols-3 max-w-4xl"
+            }`}>
             {content.whoFor.map((item, index) => (
               <Card
                 key={index}
-                className="w-full border-sky-100 bg-blue-100 hover:border-sky-300 transition-all"
+                className={`h-full border-sky-100 bg-blue-100 hover:border-sky-300 transition-all ${content.whoFor.length === 5
+                    ? "w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                    : "w-full"
+                  }`}
               >
-                <CardContent className="p-6 text-center">
+                <CardContent className="p-6 text-center h-full flex flex-col justify-center items-center">
                   <CheckCircle className="h-10 w-10 text-sky-600 mx-auto mb-3" />
                   <p className="text-gray-700 font-medium">{item}</p>
                 </CardContent>
@@ -177,7 +185,7 @@ const ServiceDetail = () => {
 
 
       {/* Challenges & Solutions */}
-      <section className="py-10 lg:py-14 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           <div className="text-center mb-6">

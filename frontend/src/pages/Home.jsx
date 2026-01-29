@@ -7,21 +7,20 @@ import { services, whyChooseUs, testimonials } from '../mock';
 
 const Home = () => {
 
-  /* 🔁 HERO BACKGROUND ROTATION (ONLY CHANGE) */
+  /* 🔁 HERO SLIDER LOGIC */
+  // Exactly 3 images as requested
   const heroImages = [
     "https://i.ibb.co/spt1K1KL/2.jpg",
     "https://i.ibb.co/k2Sh2Ym4/Whats-App-Image-2026-01-21-at-7-21-17-PM.jpg",
-    "https://i.ibb.co/V0mKH8Jn/Whats-App-Image-2026-01-21-at-7-21-18-PM-1.jpg",
-    "https://i.ibb.co/b5b4Wd0F/Whats-App-Image-2026-01-21-at-7-21-18-PM.jpg"
+    "https://i.ibb.co/V0mKH8Jn/Whats-App-Image-2026-01-21-at-7-21-18-PM-1.jpg"
   ];
 
-  const [currentImage, setCurrentImage] = React.useState(0);
+  const [currentHeroSlide, setCurrentHeroSlide] = React.useState(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % heroImages.length);
-    }, 5000);
-
+      setCurrentHeroSlide((prev) => (prev + 1) % heroImages.length);
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
   /* 🔁 END CHANGE */
@@ -29,80 +28,84 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
 
-      {/* Hero Section */}
+      {/* Hero Section - Background Sider */}
       <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100">
 
         {/* Dynamic Background Images */}
         {heroImages.map((img, index) => (
-          <img
-            key={img}
-            src={img}
-            alt="Laundry Service"
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${index === currentImage ? "opacity-40" : "opacity-0"
+          <div
+            key={index}
+            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentHeroSlide ? "opacity-100" : "opacity-0"
               }`}
-          />
+          >
+            <img
+              src={img}
+              alt="Laundry Service"
+              className="w-full h-full object-cover"
+            />
+            {/* Overlay for readability */}
+            <div className="absolute inset-0 bg-black/60"></div>
+          </div>
         ))}
 
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/20"></div>
+        {/* Content Overlay */}
+        <div className="relative z-10 flex flex-col justify-center h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+          <div className="flex flex-col items-start text-left space-y-8 max-w-3xl">
 
-        {/* Centered Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center text-center h-full px-4 sm:px-6 lg:px-8 space-y-8">
-
-          <div className="inline-flex items-center bg-blue-200 text-sky-700 px-4 py-2 rounded-full text-base font-medium">
-            <Sparkles className="h-4 w-4 mr-2" />
-            Student Trusted Laundry Partner
-          </div>
-
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-blue-900 leading-tight">
-            The No 1 Trusted Laundry Solutions
-            <br />
-            <span className="text-blue-900">for Large-Scale Operations</span>
-          </h1>
-
-          <p className="text-xl md:text-2xl font-semibold text-gray-900 leading-relaxed max-w-2xl">
-            We handle large-volume laundry with care for residential schools, colleges, hospitals, and hotels across India.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4">
-            <Link to="/contact">
-              <Button size="lg" className="bg-blue-900 hover:bg-blue-800 text-white text-lg px-8 py-6">
-                Get a Quote
-                <ArrowRight className="ml-2 h-5 w-5" />
-              </Button>
-            </Link>
-            <Link to="/process">
-              <Button size="lg" variant="outline" className="text-blue-900 border-blue-600 hover:bg-sky-50 text-lg px-8 py-6">
-                See How We Work
-              </Button>
-            </Link>
-          </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-12 border-t border-gray-200 max-w-3xl w-full">
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-blue-900">500+</div>
-              <div className="text-sm sm:text-base font-semibold text-gray-900">Institutions Served</div>
+            <div className="inline-flex items-center bg-black/40 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30 shadow-lg">
+              <Sparkles className="h-4 w-4 mr-2 text-yellow-400" />
+              <span className="tracking-wide">Student Trusted Laundry Partner</span>
             </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-blue-900">99%</div>
-              <div className="text-sm sm:text-base font-semibold text-gray-900">Client Satisfaction</div>
+
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl tracking-tight">
+              The No 1 Trusted Laundry Solutions <span className="text-sky-400">for Large-Scale Operations</span>
+            </h1>
+
+            <p className="text-lg md:text-xl font-medium text-gray-200 leading-relaxed max-w-2xl drop-shadow-xl">
+              We handle large-volume laundry with care for residential schools, colleges, hospitals, and hotels across India.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <Link to="/contact">
+                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white border-0 text-lg px-8 py-6 w-full sm:w-auto">
+                  Get a Quote
+                  <ArrowRight className="ml-2 h-5 w-5" />
+                </Button>
+              </Link>
+              <Link to="/process">
+                <Button size="lg" variant="outline" className="text-white border-white bg-white/10 hover:bg-white hover:text-blue-900 text-lg px-8 py-6 w-full sm:w-auto">
+                  See How We Work
+                </Button>
+              </Link>
             </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-blue-900">10K+</div>
-              <div className="text-sm sm:text-base font-semibold text-gray-900">Garments Cleaned Per Day</div>
+
+            {/* Stats */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/30 w-full">
+              <div>
+                <div className="text-3xl font-bold text-white">500+</div>
+                <div className="text-sm font-medium text-sky-100">Institutions Served</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">99%</div>
+                <div className="text-sm font-medium text-sky-100">Client Satisfaction</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">10K+</div>
+                <div className="text-sm font-medium text-sky-100">Garments Per Day</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-white">20+</div>
+                <div className="text-sm font-medium text-sky-100">Years Experience</div>
+              </div>
             </div>
-            <div>
-              <div className="text-3xl sm:text-4xl font-bold text-blue-900">20+</div>
-              <div className="text-sm sm:text-base font-semibold text-gray-900">Years of Experience</div>
-            </div>
+
           </div>
         </div>
       </section>
 
 
       {/* About Section */}
-      <section className="py-8 lg:py-18 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
@@ -135,7 +138,7 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="pt-6 pb-8 lg:pb-18 bg-gradient-to-b from-blue-100 to-white">
+      <section className="py-16 lg:py-24 bg-gradient-to-b from-blue-100 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900 mb-4">
@@ -200,7 +203,7 @@ const Home = () => {
 
 
       {/* Why Choose Us */}
-      <section className="pt-8 lg:pt-10 pb-8 bg-white">
+      <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-6">
             <h2 className="text-3xl md:text-4xl font-bold text-blue-900">

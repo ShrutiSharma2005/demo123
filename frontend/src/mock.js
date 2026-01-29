@@ -27,8 +27,8 @@ export const services = [
       "Fresh clothes for a confident campus life! We handle laundry for college students and hostellers, so they focus more on learning and less on washing.",
     icon: "graduationCap",
     image:
-      /*"https://i.ibb.co/gMC9bwhq/1.jpg"*/
-      "https://i.ibb.co/zTW5Ytm3/5.jpg",
+
+      "/college.png",
     features: [
       "More time for studies and campus life",
       "Clean clothes without the hassle",
@@ -46,8 +46,8 @@ export const services = [
       "Clean workwear every day! We handle large-scale laundry for industries, keeping uniforms, linens, and workwear clean and ready.",
     icon: "factory",
     image:
-      /*"https://i.ibb.co/B2gNhpXS/137676600-10356258-1.jpg"*/
-      "https://i.ibb.co/gMC9bwhq/1.jpg",
+
+      "/industry.png",
     features: [
       "Handles large laundry volumes",
       "Saves staff time and effort",
@@ -59,106 +59,68 @@ export const services = [
   },
 ];
 
-export const processSteps = [
-  {
-    id: 1,
-    title: "Pre Wash Care",
-    description: "Spot and stain removal. Special care for cuffs and collars.",
-    icon: "search",
-  },
-  {
-    id: 2,
-    title: "Wash",
-    description: "State-of-the-art commercial machines with global standard detergents.",
-    icon: "waves",
-  },
-  {
-    id: 3,
-    title: "Drying",
-    description: "Advanced dryers with moisture sensing and axial airflow.",
-    icon: "wind",
-  },
-  {
-    id: 4,
-    title: "Steam Iron",
-    description: "Professional vacuum steam ironing for crisp finish.",
-    icon: "iron",
-  },
-  {
-    id: 5,
-    title: "Quality Check",
-    description: "Final manual inspection by trained experts.",
-    icon: "checkCircle",
-  },
-  {
-    id: 6,
-    title: "Packaging",
-    description: "Individual, combined, or hanger packaging as required.",
-    icon: "package",
-  },
-];
-
 export const whyChooseUs = [
   {
     icon: "truck",
-    title: "Self Pickup and Drop",
-    description: "Pick-up and safe delivery"
+    title: "Scheduled Pickup & Safe Delivery",
+    description: "Timely collection and secure delivery right to your doorstep."
   },
   {
-    icon: "gitBranch",
-    title: "Process Oriented",
-    description: "Workflow at every stage"
+    icon: "settings",
+    title: "Process-Driven Excellence",
+    description: "A meticulous, step-by-step workflow for consistent quality."
   },
   {
     icon: "leaf",
-    title: "Eco-Friendly",
-    description: "Fabric-safe cleaning products"
+    title: "Eco-Conscious Cleaning",
+    description: "Sustainable practices using gentle, fabric-safe detergents."
   },
   {
     icon: "cpu",
-    title: "Modern Machinery",
-    description: "Advanced washing and drying equipment"
+    title: "State-of-the-Art Technology",
+    description: "Utilizing high-end machinery for superior washing and drying."
   },
   {
     icon: "users",
-    title: "Skilled Handling",
-    description: "Of uniforms, linens, and daily wear"
+    title: "Expert Textile Handling",
+    description: "Specialized care for everything from uniforms to delicate linens."
   },
   {
     icon: "tag",
-    title: "Cloth Coding",
-    description: "To prevent loss or mixing"
+    title: "Precision Tagging & Coding",
+    description: "Advanced tracking systems to ensure your items are never misplaced."
   },
   {
     icon: "eye",
-    title: "Manual Checks",
-    description: "Before and after washing"
+    title: "Rigorous Quality Inspections",
+    description: "Detailed manual checks performed before and after every wash."
   },
   {
     icon: "package",
-    title: "Neat Packing",
-    description: "With proper labeling"
+    title: "Pristine Packaging",
+    description: "Crisply folded and clearly labeled for a boutique finish."
   }
 ];
+
 
 export const testimonials = [
   {
     id: 1,
     name: "Management",
     organization: "Residential School, Bangalore",
-    text: "Venus Fabcare has streamlined our residential school laundry with hygienic processes and consistent fabric care. Their structured approach and timely delivery make them a dependable partner."
+    text: "“Venus Fabcare has streamlined our residential school laundry operations through hygienic processes and consistent fabric care. Their structured workflow and timely delivery make them a reliable partner."
   },
   {
     id: 2,
     name: "Administration",
     organization: "Engineering Institution, Bangalore",
-    text: "Handling hostel laundry at scale is smooth with Venus Fabcare. Their trained team, modern machinery, and clear processes ensure clean, well-maintained garments every time."
+    text: "Venus Fabcare simplifies large-scale hostel laundry with trained staff, modern machinery, and clear operational processes. Every delivery meets cleanliness, fabric care, and service reliability standards."
   },
   {
     id: 3,
     name: "Operations Head",
     organization: "Institutional Facility",
-    text: "Their industrial laundry process meets our hygiene and quality standards with ease. Reliable service, fabric safety, and operational consistency stand out."
+    text: "Venus Fabcare delivers industrial laundry services that consistently meet strict hygiene and quality standards. Their strong focus on fabric safety, dependable operations,disciplined service processes ensures reliable outcomes at scale"
   }
 ];
 

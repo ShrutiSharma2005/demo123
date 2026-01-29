@@ -20,8 +20,8 @@ const About = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <img 
-                src="https://i.ibb.co/TfrztHH/13693594-2101-i039-007-laundry-washing-isometric.jpg"
+              <img
+                src="/i.jpeg"
                 alt="Venus Fabcare Services"
                 className="rounded-2xl shadow-2xl"
               />
@@ -129,8 +129,8 @@ const About = () => {
               'Manufacturing Facilities',
               'Large Institutions'
             ].map((institute, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="flex items-center space-x-3 p-4 bg-white rounded-lg shadow-sm hover:shadow-md transition-shadow"
               >
                 <CheckCircle className="h-5 w-5 text-sky-600 flex-shrink-0" />
@@ -147,7 +147,7 @@ const About = () => {
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
             Why Schools, Colleges & Industries Trust Venus Fabcare
           </h2>
-          
+
           <div className="grid md:grid-cols-2 gap-6 text-left">
             {[
               'We understand the institution\'s responsibility',
