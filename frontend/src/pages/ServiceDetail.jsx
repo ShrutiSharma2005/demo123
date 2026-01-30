@@ -10,7 +10,8 @@ const serviceContent = {
   'residential-school': {
     subtitle: (
       <>
-        Fresh, Clean Uniforms for Happy School Days.
+        <b>Fresh, Clean Uniforms for Happy School Days.</b>
+        <br />
         <br />
         We offer a reliable school laundry service designed to support cleanliness, comfort, and discipline. From student uniforms to school bedding, we ensure every item is washed hygienically and handled with care so students look neat and feel confident every day
       </>
@@ -46,7 +47,8 @@ const serviceContent = {
   'college-laundry': {
     subtitle: (
       <>
-        Clean, Hygienic Laundry — Made Easy for Students.
+        <b>Clean, Hygienic Laundry — Made Easy for Students.</b>
+        <br />
         <br />
         We provide reliable college laundry services designed for student life. From daily wear to hostel essentials, we ensure clothes are washed hygienically, handled with care, and delivered on time so students can focus on studies, not laundry.
       </>
@@ -78,7 +80,8 @@ const serviceContent = {
   'industrial-laundry': {
     subtitle: (
       <>
-        Clean, Fresh Workwear — Every Single Day.
+        <b>Clean, Fresh Workwear — Every Single Day.</b>
+        <br />
         <br />
         We provide reliable industrial laundry services for businesses of all sizes. From uniforms and workwear to linens and protective clothing, we clean, sanitize, and deliver everything on time so your team is always ready to work.
       </>
@@ -167,7 +170,7 @@ const ServiceDetail = () => {
             </Link>
           </div>
 
-          <img src={service.image} alt={service.title} className="rounded-2xl shadow-2xl" />
+          <img src={service.image} alt={service.title} className="rounded-2xl" />
         </div>
       </section>
 
@@ -182,7 +185,10 @@ const ServiceDetail = () => {
         <h2 className="text-4xl font-bold text-center text-blue-900 mb-10">Who We Serve</h2>
         <div className={`gap-6 mx-auto ${whoWeServeLayout}`}>
           {whoFor.map((item, i) => (
-            <Card key={i} className="bg-blue-100 border-sky-100">
+            <Card
+              key={i}
+              className={`bg-blue-100 border-sky-100 ${whoFor.length >= 5 ? 'w-full sm:w-[45%] lg:w-[30%]' : ''}`}
+            >
               <CardContent className="p-6 text-center">
                 <CheckCircle className="mx-auto mb-3 text-sky-600" />
                 <p className="font-medium text-gray-700">{item}</p>

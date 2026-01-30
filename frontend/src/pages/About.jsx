@@ -23,7 +23,7 @@ const About = () => {
               <img
                 src="/i.jpeg"
                 alt="Venus Fabcare Services"
-                className="rounded-2xl shadow-2xl"
+                className="rounded-2xl"
               />
             </div>
             <div className="space-y-6">

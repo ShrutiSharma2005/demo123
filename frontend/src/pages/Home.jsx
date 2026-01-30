@@ -36,16 +36,18 @@ const Home = () => {
             {/* LEFT COLUMN: Content */}
             <div className="text-left space-y-6 z-8 relative">
               {/* Badge */}
-              <div className="inline-flex items-center text-sky-100 text-sm font-medium tracking-wide">
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/40 backdrop-blur-sm text-sky-100 text-sm font-medium shadow-sm">
+                <span className="text-sky-200">✦</span>
                 Student Trusted Laundry Partner
               </div>
 
+
               {/* Title */}
               <p>  <h3 className="text-lg font-semibold text-white/90 mb-0">
-                The No 1 Trusted
+                The No.1 Trusted
               </h3><h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white -mt-1">
                   Laundry Solutions{" "}
-                  <span className="text-sky-400">for <br /> Large-Scale <br /> Operations</span>
+                  <span className="text-sky-400">for <br /> Large-Scale  Operations</span>
                 </h1></p>
 
 
@@ -71,18 +73,22 @@ const Home = () => {
               </div>
 
               {/* Stats */}
-              <div className="grid grid-cols-3 gap-8 pt-8 w-full max-w-lg">
+              <div className="grid grid-cols-4 gap-8 pt-8 w-full max-w-lg">
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
                   <div className="text-xs text-sky-200 mt-1">Institutions Served</div>
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-white">99%</div>
-                  <div className="text-xs text-sky-200 mt-1">Client Satisfaction</div>
+                  <div className="text-xs text-sky-200 mt-1">Client  <br></br>Satisfaction</div>
                 </div>
                 <div>
                   <div className="text-2xl md:text-3xl font-bold text-white">10K+</div>
-                  <div className="text-xs text-sky-200 mt-1">Garments Per Day</div>
+                  <div className="text-xs text-sky-200 mt-1">Garments <br></br>Per Day</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">20+</div>
+                  <div className="text-xs text-sky-200 mt-1">Years of Experience</div>
                 </div>
               </div>
             </div>
