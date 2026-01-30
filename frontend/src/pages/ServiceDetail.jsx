@@ -16,7 +16,7 @@ const serviceContent = {
         We offer a reliable school laundry service designed to support cleanliness, comfort, and discipline. From student uniforms to school bedding, we ensure every item is washed hygienically and handled with care so students look neat and feel confident every day
       </>
     ),
-    processTitle: 'How We Handle School Laundry',
+    processTitle: 'How We Handle  Residential School Laundry',
     processDescription:
       'Our school laundry service is built around hygiene, discipline, and consistency. We handle uniforms, bedding, and school textiles with care, ensuring professional washing, drying, and finishing. This reduces hostel staff workload and ensures students always have clean, ready-to-use clothes.',
     whoFor: [
@@ -47,15 +47,19 @@ const serviceContent = {
   'college-laundry': {
     subtitle: (
       <>
-        <b>Clean, Hygienic Laundry — Made Easy for Students.</b>
+        <b>Clean, Hygienic Laundry   Made Easy for Students.</b>
         <br />
         <br />
         We provide reliable college laundry services designed for student life. From daily wear to hostel essentials, we ensure clothes are washed hygienically, handled with care, and delivered on time so students can focus on studies, not laundry.
       </>
     ),
     processTitle: 'How We Handle College Laundry',
-    processDescription:
-      'Our college laundry service includes scheduled pickup and delivery within campus. With proper tagging, tracking, and professional care, students receive clean clothes on time while focusing on academics and campus life.',
+    processDescription: (
+      <>
+        Our organized college laundry system fits seamlessly into hostel routines. With scheduled pickup and delivery, students receive clean clothes without delays, queues, or stress.
+        By removing the hassle of laundry, we help students stay comfortable, confident, and focused on academics, exams, and campus life while colleges enjoy a smooth, well-managed service.
+      </>
+    ),
     whoFor: ['Colleges', 'Universities', 'Hostels', 'PGs'],
     challenges: [
       { problem: 'No time for laundry', solution: 'Fully managed service' },
@@ -80,7 +84,7 @@ const serviceContent = {
   'industrial-laundry': {
     subtitle: (
       <>
-        <b>Clean, Fresh Workwear — Every Single Day.</b>
+        <b>Clean, Fresh Workwear  Every Single Day</b>
         <br />
         <br />
         We provide reliable industrial laundry services for businesses of all sizes. From uniforms and workwear to linens and protective clothing, we clean, sanitize, and deliver everything on time so your team is always ready to work.

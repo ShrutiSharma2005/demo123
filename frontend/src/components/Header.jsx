@@ -60,16 +60,18 @@ const Header = () => {
               </button>
 
               {isDropdownOpen && (
-                <div className="absolute top-full left-0 mt-3 bg-white px-4 py-3 space-y-2">
-                  {institutesLinks.map((link) => (
-                    <Link
-                      key={link.path}
-                      to={link.path}
-                      className="block text-sm font-medium text-gray-900 no-underline hover:text-blue-900 transition-colors"
-                    >
-                      {link.name}
-                    </Link>
-                  ))}
+                <div className="absolute top-full left-0 pt-4 w-64 animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="bg-white p-2 rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 flex flex-col gap-1 ring-1 ring-black/5">
+                    {institutesLinks.map((link) => (
+                      <Link
+                        key={link.path}
+                        to={link.path}
+                        className="block px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-blue-900 hover:bg-blue-50 rounded-lg transition-all duration-200 no-underline"
+                      >
+                        {link.name}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               )}
             </div>

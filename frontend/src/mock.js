@@ -3,7 +3,7 @@
 export const services = [
   {
     id: 1,
-    title: "School Laundry Service",
+    title: " Residential School Laundry Service",
     slug: "residential-school",
     description:
       "Fresh, clean uniforms for happy school days. Our school laundry service supports hygiene, comfort, and discipline by ensuring uniforms and bedding are washed with care and delivered on time.",
