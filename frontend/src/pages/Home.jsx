@@ -10,16 +10,16 @@ const Home = () => {
   /* 🔁 HERO SLIDER LOGIC */
   // Exactly 3 images as requested
   const heroImages = [
-    "https://i.ibb.co/spt1K1KL/2.jpg",
-    "https://i.ibb.co/k2Sh2Ym4/Whats-App-Image-2026-01-21-at-7-21-17-PM.jpg",
-    "https://i.ibb.co/V0mKH8Jn/Whats-App-Image-2026-01-21-at-7-21-18-PM-1.jpg"
+    "/hero1.png",
+    "/hero2.png",
+    "/hero3.png"
   ];
 
   const [currentHeroSlide, setCurrentHeroSlide] = React.useState(0);
 
   React.useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentHeroSlide((prev) => (prev + 1) % heroImages.length);
+      setCurrentHeroSlide((prev) => (prev + 5) % heroImages.length);
     }, 4000);
     return () => clearInterval(interval);
   }, []);
@@ -28,75 +28,81 @@ const Home = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
 
-      {/* Hero Section - Background Sider */}
-      <section className="relative h-screen w-full overflow-hidden bg-gradient-to-br from-sky-50 via-white to-sky-100">
+      {/* Hero Section */}
+      <section className="relative w-full overflow-hidden bg-[#0e4a8f] min-h-screen flex items-center">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full pt-20 pb-16 lg:pt-0 lg:pb-0">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
 
-        {/* Dynamic Background Images */}
-        {heroImages.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${index === currentHeroSlide ? "opacity-100" : "opacity-0"
-              }`}
-          >
-            <img
-              src={img}
-              alt="Laundry Service"
-              className="w-full h-full object-cover"
-            />
-            {/* Overlay for readability */}
-            <div className="absolute inset-0 bg-black/60"></div>
-          </div>
-        ))}
+            {/* LEFT COLUMN: Content */}
+            <div className="text-left space-y-6 z-8 relative">
+              {/* Badge */}
+              <div className="inline-flex items-center text-sky-100 text-sm font-medium tracking-wide">
+                Student Trusted Laundry Partner
+              </div>
 
-        {/* Content Overlay */}
-        <div className="relative z-10 flex flex-col justify-center h-full px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-          <div className="flex flex-col items-start text-left space-y-8 max-w-3xl">
+              {/* Title */}
+              <p>  <h3 className="text-lg font-semibold text-white/90 mb-0">
+                The No 1 Trusted
+              </h3><h1 className="text-2xl md:text-3xl lg:text-4xl font-extrabold text-white -mt-1">
+                  Laundry Solutions{" "}
+                  <span className="text-sky-400">for <br /> Large-Scale <br /> Operations</span>
+                </h1></p>
 
-            <div className="inline-flex items-center bg-black/40 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-medium border border-white/30 shadow-lg">
-              <Sparkles className="h-4 w-4 mr-2 text-yellow-400" />
-              <span className="tracking-wide">Student Trusted Laundry Partner</span>
+
+
+
+              {/* Description */}
+              <p className="text-lg text-sky-100 max-w-xl leading-relaxed">
+                We handle large-volume laundry with care for residential schools, colleges, hospitals, and hotels across India.
+              </p>
+
+              {/* Buttons */}
+              <div className="flex flex-wrap gap-4 pt-2">
+                <Link to="/contact">
+                  <Button size="lg" className="bg-sky-500 hover:bg-sky-600 text-white border-0 px-8 h-12 text-lg rounded-lg shadow-lg">
+                    Get a Quote
+                  </Button>
+                </Link>
+                <Link to="/process">
+                  <Button size="lg" variant="outline" className="text-white border-white/20 hover:bg-white/10 px-8 h-12 text-lg rounded-lg">
+                    See How We Work
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-3 gap-8 pt-8 w-full max-w-lg">
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">500+</div>
+                  <div className="text-xs text-sky-200 mt-1">Institutions Served</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">99%</div>
+                  <div className="text-xs text-sky-200 mt-1">Client Satisfaction</div>
+                </div>
+                <div>
+                  <div className="text-2xl md:text-3xl font-bold text-white">10K+</div>
+                  <div className="text-xs text-sky-200 mt-1">Garments Per Day</div>
+                </div>
+              </div>
             </div>
 
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight drop-shadow-2xl tracking-tight">
-              The No 1 Trusted Laundry Solutions <span className="text-sky-400">for Large-Scale Operations</span>
-            </h1>
+            {/* RIGHT COLUMN: Slider Images */}
+            <div className="relative h-[800px] md:h-[900px] lg:h-[100vh] w-full flex items-center justify-center lg:justify-end">
+              {heroImages.map((img, index) => (
+                <div
+                  key={index}
+                  className={`absolute inset-0 transition-all duration-1000 ease-in-out flex items-center justify-center lg:justify-end lg:pr-96 ${index === currentHeroSlide ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
+                    }`}
+                >
+                  <img
+                    src={img}
+                    alt="Laundry Service"
+                    className="w-[120%] h-[120%] object-contain scale-150 lg:scale-[5.5]"
+                  />
 
-            <p className="text-lg md:text-xl font-medium text-gray-200 leading-relaxed max-w-2xl drop-shadow-xl">
-              We handle large-volume laundry with care for residential schools, colleges, hospitals, and hotels across India.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-              <Link to="/contact">
-                <Button size="lg" className="bg-sky-600 hover:bg-sky-700 text-white border-0 text-lg px-8 py-6 w-full sm:w-auto">
-                  Get a Quote
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </Link>
-              <Link to="/process">
-                <Button size="lg" variant="outline" className="text-white border-white bg-white/10 hover:bg-white hover:text-blue-900 text-lg px-8 py-6 w-full sm:w-auto">
-                  See How We Work
-                </Button>
-              </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 pt-8 border-t border-white/30 w-full">
-              <div>
-                <div className="text-3xl font-bold text-white">500+</div>
-                <div className="text-sm font-medium text-sky-100">Institutions Served</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">99%</div>
-                <div className="text-sm font-medium text-sky-100">Client Satisfaction</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">10K+</div>
-                <div className="text-sm font-medium text-sky-100">Garments Per Day</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-white">20+</div>
-                <div className="text-sm font-medium text-sky-100">Years Experience</div>
-              </div>
+                </div>
+              ))}
             </div>
 
           </div>

@@ -31,10 +31,14 @@ const About = () => {
                 Who We Are
               </h2>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Venus Fabcare supports institutions across India with reliable laundry services built for scale. We follow a practical, step-by-step approach where garments are carefully sorted, cleaned, finished, and delivered without shortcuts.
+                VENUS FABCARE has been delivering professional laundry services across India for over 20 years, supporting institutions that require reliability, hygiene, and scale. From the past two decades, our operations have followed a practical, step-by-step process where every garment is carefully sorted, thoroughly cleaned, professionally finished, and delivered on time, without shortcuts.
+
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                Our team uses eco-friendly detergents, modern equipment, and hands-on fabric knowledge to maintain hygiene and fabric quality. We work with residential schools, PU colleges, universities, medical colleges, hospitals, hotels, and industries, helping them manage laundry smoothly and without daily operational stress.
+                We use eco-friendly detergents, modern industrial equipment, and hands-on fabric expertise to maintain high hygiene standards while preserving fabric quality. Our experienced team ensures consistent results even when handling large laundry volumes.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                For over 20 years, VENUS FABCARE has worked with residential schools, PU colleges, universities, medical colleges, hospitals, hotels, and industrial facilities, helping them manage laundry smoothly while reducing daily operational stress and workload.
               </p>
             </div>
           </div>
@@ -144,11 +148,11 @@ const About = () => {
       {/* Why Trust Us */}
       <section className="py-16 lg:py-24 bg-gradient-to-br from-blue-900 to-sky-700 text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Why Schools, Colleges & Industries Trust Venus Fabcare
+          <h2 className="text-2xl md:text-4xl font-bold mb-8 leading-tight">
+            Why Schools, Colleges & Industries Trust <br className="hidden md:block" /> Venus Fabcare
           </h2>
 
-          <div className="grid md:grid-cols-2 gap-6 text-left">
+          <div className="grid md:grid-cols-2 gap-4 text-left">
             {[
               'We understand the institution\'s responsibility',
               'We work patiently and consistently',
@@ -159,9 +163,9 @@ const About = () => {
               'We provide transparent processes',
               'We deliver on time, every time'
             ].map((point, index) => (
-              <div key={index} className="flex items-start space-x-3 bg-white/10 backdrop-blur-sm p-4 rounded-lg">
-                <CheckCircle className="h-6 w-6 text-sky-300 flex-shrink-0 mt-0.5" />
-                <span className="text-white text-lg">{point}</span>
+              <div key={index} className="flex items-center space-x-4 bg-white/10 backdrop-blur-md border border-white/10 p-5 rounded-xl hover:bg-white/20 transition-all duration-300">
+                <CheckCircle className="h-6 w-6 text-sky-300 flex-shrink-0" />
+                <span className="text-white text-lg font-medium">{point}</span>
               </div>
             ))}
           </div>
