@@ -38,7 +38,7 @@ const About = () => {
                 We use eco-friendly detergents, modern industrial equipment, and hands-on fabric expertise to maintain high hygiene standards while preserving fabric quality. Our experienced team ensures consistent results even when handling large laundry volumes.
               </p>
               <p className="text-lg text-gray-600 leading-relaxed">
-                For over 20 years, VENUS FABCARE has worked with residential schools, PU colleges, universities, medical colleges, hospitals, hotels, and industrial facilities, helping them manage laundry smoothly while reducing daily operational stress and workload.
+                For over 20 years, VENUS FABCARE has worked with residential schools, Integrated PU Colleges and there Courses, universities, medical colleges, hospitals, hotels, and industrial facilities, helping them manage laundry smoothly while reducing daily operational stress and workload.
               </p>
             </div>
           </div>

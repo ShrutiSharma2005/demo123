@@ -11,7 +11,7 @@ const Header = () => {
   const isActive = (path) => location.pathname === path;
 
   const institutesLinks = [
-    { name: 'Residential School', path: '/services/residential-school' },
+    { name: 'Residential School Laundry Service', path: '/services/residential-school' },
     { name: 'College Laundry Service', path: '/services/college-laundry' },
     { name: 'Industrial Laundry Service', path: '/services/industrial-laundry' },
   ];
@@ -28,9 +28,9 @@ const Header = () => {
           {/* Logo */}
           <Link to="/" className="flex items-center no-underline">
             <img
-              src="https://i.ibb.co/RTqb9hJ9/VENUS-FABCARE-1.png"
+              src="/logo.png"
               alt="Venus Fabcare Logo"
-              className="h-28 md:h-32 lg:h-36 w-auto"
+              className="h-16 md:h-20 lg:h-24 w-auto"
             />
           </Link>
 
@@ -38,7 +38,7 @@ const Header = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <Link to="/" className={navLinkClass(isActive('/'))}>Home</Link>
             <Link to="/about" className={navLinkClass(isActive('/about'))}>About Us</Link>
-            <Link to="/process" className={navLinkClass(isActive('/process'))}>Our School</Link>
+            <Link to="/process" className={navLinkClass(isActive('/process'))}>Our Solution</Link>
 
             {/* Institutes Dropdown */}
             <div

@@ -50,7 +50,9 @@ const serviceContent = {
         <b>Clean, Hygienic Laundry   Made Easy for Students.</b>
         <br />
         <br />
-        We provide reliable college laundry services designed for student life. From daily wear to hostel essentials, we ensure clothes are washed hygienically, handled with care, and delivered on time so students can focus on studies, not laundry.
+        We offer reliable laundry services tailored for student life. From daily wear to hostel essentials, clothes are washed hygienically, handled with care, and delivered on time so students can focus on studies, not laundry.
+        Our service supports students from Degree, Engineering, Medical, and Integrated PU Colleges, including those enrolled in PU, NEET, JEE, CET, and other competitive courses.
+
       </>
     ),
     processTitle: 'How We Handle College Laundry',
@@ -159,8 +161,8 @@ const ServiceDetail = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-white to-sky-50">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-900 to-sky-700 text-white py-20">
-        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <section className="bg-gradient-to-br from-blue-900 to-sky-700 text-white py-10">
+        <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-100 items-center">
           <div>
             <Link to="/" className="inline-flex items-center mb-6 text-sky-100 hover:text-white">
               <ArrowLeft className="mr-2" /> Back to Home
@@ -174,7 +176,11 @@ const ServiceDetail = () => {
             </Link>
           </div>
 
-          <img src={service.image} alt={service.title} className="rounded-2xl" />
+          <img
+            src={service.image}
+            alt={service.title}
+            className="w-full max-w-sm h-64 md:h-80 lg:h-96 object-contain rounded-2xl ml-auto"
+          />
         </div>
       </section>
 

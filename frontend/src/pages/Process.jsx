@@ -103,7 +103,7 @@ const Process = () => {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 relative">
           {/* Continuous vertical line through all steps */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-300" style={{ height: '100%' }} />
+          <div className="absolute left-1/2 transform -translate-x-1/2 top-0 bottom-0 w-0.5 bg-gray-300" />
 
           {processSteps.map((step, index) => {
             const isLeft = index % 2 === 0;
@@ -115,12 +115,13 @@ const Process = () => {
                 className="relative flex items-center justify-center py-8"
               >
                 {/* Container with three columns */}
-                <div className="w-full flex items-center relative z-5">
-                  {/* Left Side - Box or Text */}
-                  <div className={`w-5/12 flex ${isLeft ? 'justify-end' : 'justify-start'}`}>
+                <div className="w-full flex items-center justify-center relative z-10 gap-6">
+
+                  {/* Left Side */}
+                  <div className="flex-1 flex justify-end">
                     {isLeft ? (
                       // Box on left with image
-                      <div className="w-48 h-36 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg border border-blue-100 overflow-hidden">
+                      <div className="w-48 h-36 bg-gradient-to-br from-white-50 to-blue-50 rounded-lg border border-blue-100 overflow-hidden shadow-sm">
                         <img
                           src={step.image}
                           alt={step.title}
@@ -129,7 +130,7 @@ const Process = () => {
                       </div>
                     ) : (
                       // Text on left
-                      <div className="text-right pr-6">
+                      <div className="text-right">
                         <div className="text-xs text-sky-600 font-medium mb-1">
                           Step {String(step.id).padStart(2, '0')}
                         </div>
@@ -144,18 +145,18 @@ const Process = () => {
                   </div>
 
                   {/* Center - Circle Icon */}
-                  <div className="w-2/12 flex justify-center relative">
-                    <div className="w-16 h-16 rounded-full bg-sky-600 flex items-center justify-center z-10 shadow-md">
+                  <div className="flex-shrink-0 w-16 h-16 relative flex items-center justify-center">
+                    <div className="w-16 h-16 rounded-full bg-sky-600 flex items-center justify-center z-10 shadow-md border-4 border-white">
                       <Icon className="w-8 h-8 text-white" strokeWidth={2} />
                     </div>
                   </div>
 
-                  {/* Right Side - Text or Box */}
-                  <div className={`w-5/12 flex ${isLeft ? 'justify-start' : 'justify-end'}`}>
+                  {/* Right Side */}
+                  <div className="flex-1 flex justify-start">
                     {isLeft ? (
                       // Text on right
-                      <div className="text-left pl-6">
-                        <div className="text-xs text-sky-600 font-medium mb-1">
+                      <div className="text-left">
+                        <div className="text-xs text-white-600 font-medium mb-1">
                           Step {String(step.id).padStart(2, '0')}
                         </div>
                         <h3 className="text-lg font-bold text-gray-900 mb-1">
@@ -167,9 +168,8 @@ const Process = () => {
                       </div>
                     ) : (
                       // Box on right with image
-                      <div className="w-48 h-36 bg-gradient-to-br from-sky-50 to-blue-50 rounded-lg border border-blue-100 overflow-hidden">
+                      <div className="w-48 h-36 bg-gradient-to-br from-white-50 to-blue-50 rounded-lg border border-blue-100 overflow-hidden shadow-sm">
                         <img
-
                           src={step.image}
                           alt={step.title}
                           className="w-full h-full object-cover"
