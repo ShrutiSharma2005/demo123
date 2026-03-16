@@ -28,4 +28,6 @@ pipeline
 
 
 ssh-keygen -t ed25519 -C
+sudo cat var/ggg
  git remote set-url origin git@github.com:ShrutiSharma2005/c2.git
+ git config --global user.email "shrutisharma.liwingindia@gmail.com"
